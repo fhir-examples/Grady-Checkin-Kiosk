@@ -1,10 +1,123 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+  font-family: Myriad Pro;
   color: #424242
 }
 
-#main-title {
+/* content */
+
+.center {
+  margin:auto;
+}
+
+/* Welcome */
+.content-welcome {
+  position: relative;
+  top: 10em;
+}
+
+
+/* Text */
+
+
+.center-text {
   text-align: center;
+}
+
+h1 {
+  color: #000000;
+  font-size: 3em;
+}
+
+.info {
+  color: #95989A;
+  font-size: 1.5em;
+}
+
+.main {
+  color: #000000;
+  font-size: 1.5em;
+}
+
+
+/* Header */
+.header {
+  height: 6em;
+  background-color: #ee6e73;
+}
+
+
+/* Button */
+
+.secondary {
+  background-color: #616161;
+}
+
+.secondary:hover {
+  background-color: #7d827f;
+}
+
+.primary {
+  background-color: #EF5350;
+}
+
+.primary:hover {
+  background-color: #ffa7a7;
+}
+
+.left {
+  left: 60%;
+}
+
+.right {
+  right: 60%;
+}
+
+
+
+.example-enter {
+  opacity: 0;
+    transform:   translate(250px,0);
+    transform: translate3d(250px,0,0);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 300ms;
+}
+
+
+.exampletrue-enter {
+  opacity: 0;
+    transform:   translate(250px,0);
+    transform: translate3d(250px,0,0);
+}
+
+.exampletrue-enter.exampletrue-enter-active {
+  opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 300ms;
+}
+
+.examplefalse-enter {
+  opacity: 0;
+    transform:   translate(-250px,0);
+    transform: translate3d(-250px,0,0);
+}
+
+.examplefalse-enter.examplefalse-enter-active {
+  opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 300ms;
 }

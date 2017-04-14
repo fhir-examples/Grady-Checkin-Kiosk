@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 
 
 class ProgressBar extends Component {
@@ -7,15 +6,25 @@ class ProgressBar extends Component {
     super();
     this.state = {
       current: 0,
-      total: 8
+      total: 8,
+      show: false
     }
   }
+
+  componentWillReceiveProps() {
+    this.setState({
+      show:this.props.show
+    })
+  }
+
   render() {
     return (
-      <div className="progress-bar">
-        This is a progress bar!
-        At present, we are at {this.state.current} out of {this.state.total}.
-      </div>
+
+        this.state.show &&
+        <div className="progress">
+          <div className="determinate" style={{width: this.props.step/this.state.total * 100 + '%'}}></div>
+        </div>
+      
     );
   }
 }
