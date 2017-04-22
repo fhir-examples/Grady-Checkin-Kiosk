@@ -11,20 +11,17 @@ class ProgressBar extends Component {
     }
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      show:this.props.show
-    })
-  }
 
   render() {
     return (
-
-        this.state.show &&
-        <div className="progress">
-          <div className="determinate" style={{width: this.props.step/this.state.total * 100 + '%'}}></div>
+      <div className='row'>
+        <div className='col s12'>
+        <i className="material-icons progress-icon" style={{color: '#EF5350',transition: 'left .3s linear',position: 'relative', left: 'calc(' + this.props.step/this.state.total * 100 + '% - 15px)'}}>location_on</i>
+        <div className="progress progress-background">
+          <div className="progress-solid determinate" style={{width: this.props.step/this.state.total * 100 + '%'}}></div>
         </div>
-      
+        </div>
+      </div>
     );
   }
 }

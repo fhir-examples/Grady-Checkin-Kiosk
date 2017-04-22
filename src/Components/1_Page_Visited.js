@@ -14,23 +14,29 @@ class Page_Visited extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-      this.setState(prevState => ({
+    if (nextProps.show !== this.state.show) {
+      this.setState({
         show: nextProps.show
-      }));
+      });
+    }
   }
 
-  clickNext() {
+  clickNo() {
     this.setState({
       enter: false
     });
-    this.props.clickNext();
+    this.props.clickStep({
+      step: 2
+    });
   }
 
-  clickBack() {
+  clickYes() {
     this.setState({
       enter: true
     });
-    this.props.clickBack();
+    this.props.clickStep({
+      step: 4
+    });
   }
 
   render() {
@@ -39,20 +45,19 @@ class Page_Visited extends Component {
     return (
       <div>
       <CSSTransitionGroup
-      transitionName={"example"+this.state.enter}
-      transitionEnterTimeout={1000}
+      transitionName={this.props.animation + '-' + this.state.enter}
+      transitionEnterTimeout={500}
       transitionLeave={false}>
       {this.state.show  &&
-        <div key='1' className='container content-welcome'>
-          <h1 className='center-text'>1 Welcome to Grady Hospital!</h1>
+        <div key='1' className='content-welcome'>
           <p className="main center-text"> Have you visited us before?</p>
 
           <div className='row'>
             <div className='col s6'>
-              <a className="waves-effect waves-light btn secondary left" onClick={this.clickNext.bind(this)}>NO</a>
+              <a className="waves-effect waves-light btn secondary left" onClick={this.clickNo.bind(this)}>NO</a>
             </div>
             <div className='col s6'>
-              <a className="waves-effect waves-light btn primary right" onClick={this.clickBack.bind(this)}>YES</a>
+              <a className="waves-effect waves-light btn primary right" onClick={this.clickYes.bind(this)}>YES</a>
             </div>
           </div>
         </div>

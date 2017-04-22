@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import ProgressBar from './Components/ProgressBar';
 import Header from './Components/Header';
+import Title from './Components/Title';
 import Page_Welcome from './Components/0_Page_Welcome';
 import Page_Visited from './Components/1_Page_Visited';
 import Page_Basic_Info from './Components/2_Page_Basic_Info';
+import Page_Contact from './Components/3_Page_Contact';
+import Page_Phone from './Components/4_Page_Phone';
+
 
 //import mkFhir from 'fhir.js';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 injectTapEventPlugin();
@@ -19,14 +21,13 @@ class App extends Component {
     super(props);
     this.state = {
       step: 0,
-      toggle: true
+      contentAnimation: 'content-enter',
     };
   }
 
-  handleClick() {
+  handleStep(e) {
     this.setState(prevState => ({
-      step: prevState.step + 1,
-      toggle: !prevState.toggle
+      step: e.step,
     }));
     console.log('in parent, changing step to');
     console.log(this.state.step);
@@ -35,22 +36,26 @@ class App extends Component {
   handleBack() {
     this.setState(prevState => ({
       step: prevState.step - 1,
-      toggle: !prevState.toggle
     }));
     console.log('in parent, changing step to');
     console.log(this.state.step);
   }
 
   render() {
-    console.log('parent re-rendering. show should be')
-    console.log(this.state.step===0);
+    console.log('parent re-rendering. step should be')
+    console.log(this.state.step > 1);
     return (
       <div>
         <Header/>
-         <ProgressBar show={this.state.step>2} step={this.state.step}/>
-        <Page_Welcome show={this.state.step===0} clickNext={this.handleClick.bind(this)}/>
-        <Page_Visited show={this.state.step===1} clickNext={this.handleClick.bind(this)} clickBack={this.handleBack.bind(this)}/>
-        <Page_Basic_Info show={this.state.step===2} clickNext={this.handleClick.bind(this)} clickBack={this.handleBack.bind(this)}/>
+        <div className='container'>
+        <Title step={this.state.step}/>
+        <Page_Welcome animation={this.state.contentAnimation} show={this.state.step===0} clickStep={this.handleStep.bind(this)}/>
+        <Page_Visited animation={this.state.contentAnimation} show={this.state.step===1} clickStep={this.handleStep.bind(this)}/>
+        <Page_Basic_Info animation={this.state.contentAnimation} show={this.state.step===2} clickStep={this.handleStep.bind(this)}/>
+        <Page_Contact animation={this.state.contentAnimation} show={this.state.step===3} clickStep={this.handleStep.bind(this)}/>
+        <Page_Phone animation={this.state.contentAnimation} show={this.state.step===4} clickStep={this.handleStep.bind(this)}/>
+
+        </div>
         </div>
     );
   }

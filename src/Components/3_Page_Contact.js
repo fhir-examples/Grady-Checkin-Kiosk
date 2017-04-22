@@ -3,7 +3,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 
-class Page_Basic_Info extends Component {
+class Page_Contact extends Component {
 
   constructor() {
     super();
@@ -27,7 +27,7 @@ class Page_Basic_Info extends Component {
       enter: true
     });
     this.props.clickStep({
-      step: 1
+      step: 2
     });
   }
 
@@ -36,7 +36,7 @@ class Page_Basic_Info extends Component {
       enter: false
     });
     this.props.clickStep({
-      step: 3
+      step: 4
     });
   }
 
@@ -66,23 +66,35 @@ class Page_Basic_Info extends Component {
       <form key='1'>
         <div className='content-basic-info'>
           <div className='row'>
-            <div className='col s12 m5'>
-              <div className="input-field col s12">
-                <input id="first_name" type="text" className="validate"/>
-                <label htmlFor="first_name">First Name</label>
-              </div>
-
-              <div className="input-field col s12">
-                <input id="last_name" type="text" className="validate"/>
-                <label htmlFor="last_name">Last Name</label>
-              </div>
+            <div className="input-field col m9">
+              <input id="street_address" type="text" className="validate"/>
+              <label htmlFor="street_address">Street Address</label>
             </div>
-            <div className='col s2'/>
-            <div className='col s12 m5'>
-              <div className="input-field col s12">
-                <input id="date_of_birth" type="text" className="validate"/>
-                <label htmlFor="date_of_birth">Date of Birth</label>
-              </div>
+            <div className="input-field col m3">
+              <input id="apt_num" type="text" className="validate"/>
+              <label htmlFor="apt_num">Apt #</label>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className="input-field col m3">
+              <input id="zip_code" type="text" className="validate"/>
+              <label htmlFor="zip_code">Zip Code</label>
+            </div>
+            <div className="input-field col m6">
+              <input id="city" type="text" className="validate"/>
+              <label htmlFor="city">City</label>
+            </div>
+            <div className="input-field col m3">
+              <input id="state" type="text" className="validate"/>
+              <label htmlFor="state">State</label>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className="input-field col m6">
+              <input id="zip_code" type="text" className="validate"/>
+              <label htmlFor="zip_code">Zip Code</label>
             </div>
           </div>
 
@@ -185,4 +197,4 @@ class Page_Basic_Info extends Component {
   }
 }
 
-export default Page_Basic_Info;
+export default Page_Contact;
