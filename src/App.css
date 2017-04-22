@@ -110,9 +110,22 @@ h1 {
 /* Header */
 .header {
   height: 6em;
-  background-color: #ee6e73;
+  background-color: #fff;
 }
 
+img.logo{
+  height:3em;
+}
+
+.logoWords{
+  color:#212121;
+}
+
+nav
+{
+  box-shadow:none;
+  padding-top:20px;
+}
 
 /* Button */
 
