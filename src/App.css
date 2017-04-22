@@ -83,6 +83,12 @@ input:not([type]).valid, input:not([type]):focus.valid, input[type=text].valid, 
   top: 10em;
 }
 
+/* Contact */
+.phone-button {
+  position: relative;
+  top: 20px;
+}
+
 
 /* Text */
 
@@ -132,11 +138,11 @@ h1 {
   background-color: #ffa7a7;
 }
 
-.left {
+.my-left {
   left: 50%;
 }
 
-.right {
+.my-right {
   right: 50%;
 }
 

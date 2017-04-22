@@ -54,10 +54,10 @@ class Page_Visited extends Component {
 
           <div className='row'>
             <div className='col s6'>
-              <a className="waves-effect waves-light btn secondary left" onClick={this.clickNo.bind(this)}>NO</a>
+              <a className="waves-effect waves-light btn secondary my-left left" onClick={this.clickNo.bind(this)}>NO</a>
             </div>
             <div className='col s6'>
-              <a className="waves-effect waves-light btn primary right" onClick={this.clickYes.bind(this)}>YES</a>
+              <a className="waves-effect waves-light btn primary my-right right" onClick={this.clickYes.bind(this)}>YES</a>
             </div>
           </div>
         </div>

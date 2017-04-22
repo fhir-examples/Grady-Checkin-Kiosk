@@ -7,6 +7,10 @@ import Page_Visited from './Components/1_Page_Visited';
 import Page_Basic_Info from './Components/2_Page_Basic_Info';
 import Page_Contact from './Components/3_Page_Contact';
 import Page_Phone from './Components/4_Page_Phone';
+import Page_Sympton from './Components/5_Page_Sympton';
+import Page_Misc from './Components/6_Page_Misc';
+import Page_Finish from './Components/7_Page_Finish';
+
 
 
 //import mkFhir from 'fhir.js';
@@ -53,6 +57,9 @@ class App extends Component {
         <Page_Visited animation={this.state.contentAnimation} show={this.state.step===1} clickStep={this.handleStep.bind(this)}/>
         <Page_Basic_Info animation={this.state.contentAnimation} show={this.state.step===2} clickStep={this.handleStep.bind(this)}/>
         <Page_Contact animation={this.state.contentAnimation} show={this.state.step===3} clickStep={this.handleStep.bind(this)}/>
+        <Page_Sympton animation={this.state.contentAnimation} show={this.state.step===5} clickStep={this.handleStep.bind(this)}/>
+        <Page_Misc animation={this.state.contentAnimation} show={this.state.step===6} clickStep={this.handleStep.bind(this)}/>
+        <Page_Finish animation={this.state.contentAnimation} show={this.state.step===7} clickStep={this.handleStep.bind(this)}/>
         <Page_Phone animation={this.state.contentAnimation} show={this.state.step===4} clickStep={this.handleStep.bind(this)}/>
 
         </div>

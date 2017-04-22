@@ -3,13 +3,13 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 
-class Page_Welcome extends Component {
+class Page_Finish extends Component {
 
   constructor() {
     super();
     this.state = {
-      show: true,
-      enter: false
+      show: false,
+      enter: true
     }
   }
 
@@ -41,15 +41,9 @@ class Page_Welcome extends Component {
       {this.state.show &&
       <div key='1'>
         <div className='content-welcome'>
-          <p className="info center-text"> Our Grady Walk-In Clinic provides care for non-life threatening conditions.</p>
-          <p className="main center-text"> Would you like to be seen at the Grady Walk-In Clinic?</p>
-          <div className='row'>
-            <div className='col s6'>
-              <a className="waves-effect waves-light btn secondary  my-left left" onClick={this.clickNo.bind(this)}>NO</a>
-            </div>
-            <div className='col s6'>
-              <a className="waves-effect waves-light btn primary my-right right">YES</a>
-            </div>
+          <p className="main center-text"> Done!</p>
+          <div className='center'>
+            <a className="waves-effect waves-light btn secondary primary" onClick={this.clickNo.bind(this)}>Done</a>
           </div>
         </div>
      </div>
@@ -59,4 +53,4 @@ class Page_Welcome extends Component {
   }
 }
 
-export default Page_Welcome;
+export default Page_Finish;

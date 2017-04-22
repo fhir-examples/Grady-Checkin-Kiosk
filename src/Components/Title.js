@@ -30,7 +30,7 @@ class Title extends Component {
         <h1 className='center-text page-title-1'>Welcome to Grady Hospital!</h1>
      </div>
       }
-      {(this.state.step>1 && this.state.step!==4) &&
+      {(this.state.step>1 && this.state.step!==4 && this.state.step!==7) &&
       <div key='2'>
         <h1 className='center-text page-title-2'>We just need some information... </h1>
         <ProgressBar step={this.state.step}/>
@@ -39,6 +39,11 @@ class Title extends Component {
       {(this.state.step===4) &&
       <div key='3'>
         <h1 className='center-text page-title-1'>Please enter your phone number: </h1>
+      </div>
+      }
+      {(this.state.step===7) &&
+      <div key='3'>
+        <h1 className='center-text page-title-1'>You are successfully checked in! </h1>
       </div>
       }
 

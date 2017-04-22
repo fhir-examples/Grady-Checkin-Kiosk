@@ -67,21 +67,25 @@ class Page_Basic_Info extends Component {
         <div className='content-basic-info'>
           <div className='row'>
             <div className='col s12 m5'>
-              <div className="input-field col s12">
-                <input id="first_name" type="text" className="validate"/>
-                <label htmlFor="first_name">First Name</label>
-              </div>
+              <div className='row'>
+                <div className="input-field col s12">
+                  <input id="first_name" type="text" className="validate"/>
+                  <label htmlFor="first_name">First Name</label>
+                </div>
 
-              <div className="input-field col s12">
-                <input id="last_name" type="text" className="validate"/>
-                <label htmlFor="last_name">Last Name</label>
+                <div className="input-field col s12">
+                  <input id="last_name" type="text" className="validate"/>
+                  <label htmlFor="last_name">Last Name</label>
+                </div>
               </div>
             </div>
-            <div className='col s2'/>
+            <div className='col s2'> </div>
             <div className='col s12 m5'>
-              <div className="input-field col s12">
-                <input id="date_of_birth" type="text" className="validate"/>
-                <label htmlFor="date_of_birth">Date of Birth</label>
+              <div className='row'>
+                <div className="input-field col s12">
+                  <input id="date_of_birth" type="text" className="validate"/>
+                  <label htmlFor="date_of_birth">Date of Birth</label>
+                </div>
               </div>
             </div>
           </div>
@@ -90,11 +94,8 @@ class Page_Basic_Info extends Component {
             <div className='col s12 m5'>
               <div className='row'>
                 <div className='col s12'>
-                  <div className='col s12'>
                     Biological Gender
-                  </div>
                 </div>
-                <div className='col s12'>
                   <div className='col s12 m4'>
                     <input className="with-gap" name="biological_gender" type="radio" id="test1" />
                     <label htmlFor="test1">Male</label>
@@ -107,18 +108,14 @@ class Page_Basic_Info extends Component {
                     <input className="with-gap" name="biological_gender" type="radio" id="test3"  />
                     <label htmlFor="test3">Unspecified</label>
                   </div>
-                </div>
               </div>
             </div>
-            <div className='col s2'/>
+            <div className='col s2'></div>
             <div className='col s12 m5'>
               <div className='row'>
                 <div className='col s12'>
-                  <div className='col s12'>
                     Preferred Gender
-                  </div>
                 </div>
-                <div className='col s12'>
                   <div className='col s12 m4'>
                     <input className="with-gap" name="preferred_gender" type="radio" id="male" onChange={this.onGenderChange.bind(this)} />
                     <label htmlFor="male">Male</label>
@@ -131,17 +128,13 @@ class Page_Basic_Info extends Component {
                     <input className="with-gap" name="preferred_gender" type="radio" id="unspecified"  onChange={this.onGenderChange.bind(this)}/>
                     <label htmlFor="unspecified">Unspecified</label>
                   </div>
-                </div>
               </div>
 
               { this.state.pregnant_question &&
               <div className='row'>
                 <div className='col s12'>
-                  <div className='col s12'>
                     Are you pregnant?
-                  </div>
                 </div>
-                <div className='col s12'>
                   <div className='col s12 m4'>
                     <input className="with-gap" name="pregnant" type="radio" id="test7" />
                     <label htmlFor="test7">Yes</label>
@@ -149,7 +142,6 @@ class Page_Basic_Info extends Component {
                   <div className='col s12 m4'>
                     <input className="with-gap" name="pregnant" type="radio" id="test8" />
                   <label htmlFor="test8">No</label>
-                  </div>
                 </div>
               </div>
             }

@@ -81,7 +81,7 @@ class Page_Phone extends Component {
           <div className="input-field col s12">
             <i className="material-icons prefix scale-transition">phone</i>
             <input id="icon_telephone" type="tel" className="validate" value={this.state.value} onChange={this.handleChange.bind(this)} />
-            <label htmlFor="icon_telephone">XXX-XXX-XXXX</label>
+            <label htmlFor="icon_telephone"></label>
           </div>
         </div>
         <div className='row phone-input center'>

@@ -3,7 +3,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 
-class Page_Contact extends Component {
+class Page_Sympton extends Component {
 
   constructor() {
     super();
@@ -27,7 +27,7 @@ class Page_Contact extends Component {
       enter: true
     });
     this.props.clickStep({
-      step: 2
+      step: 3
     });
   }
 
@@ -36,7 +36,7 @@ class Page_Contact extends Component {
       enter: false
     });
     this.props.clickStep({
-      step: 5
+      step: 6
     });
   }
 
@@ -135,4 +135,4 @@ class Page_Contact extends Component {
   }
 }
 
-export default Page_Contact;
+export default Page_Sympton;
