@@ -225,3 +225,26 @@ nav
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
 }
+
+/* AVATAR */
+a.borderbutton
+{
+  border: 2px solid #212121;
+  width:150px;
+}
+
+.activePain
+{
+  background-color:#212121!important;
+  color:#ffffff;
+}
+
+.focus
+{
+  background-color:#fff;
+}
+
+#headStuff, #neckStuff, #chestStuff, #legStuff, #upperBackStuff, #absStuff, #groinStuff, #lowerBackStuff, #backHeadStuff, #shoulderStuff
+{
+  display:none;
+}
