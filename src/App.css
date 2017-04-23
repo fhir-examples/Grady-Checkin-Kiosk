@@ -83,6 +83,15 @@ input:not([type]).valid, input:not([type]):focus.valid, input[type=text].valid, 
   top: 10em;
 }
 
+.tel {
+  text-align: center;
+  font-size: 3em !important;
+}
+
+.input-field .prefix.active {
+  color: #EF5350
+}
+
 /* Contact */
 .phone-button {
   position: relative;
@@ -116,7 +125,25 @@ h1 {
 /* Header */
 .header {
   height: 6em;
-  background-color: #ee6e73;
+  background-color: #fff;
+}
+
+.header-position {
+  padding-left: 30px
+}
+
+img.logo{
+  height:3em;
+}
+
+.logoWords{
+  color:#212121;
+}
+
+nav
+{
+  box-shadow:none;
+  padding-top:20px;
 }
 
 

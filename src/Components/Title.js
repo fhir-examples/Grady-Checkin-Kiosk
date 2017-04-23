@@ -43,7 +43,7 @@ class Title extends Component {
       }
       {(this.state.step===7) &&
       <div key='3'>
-        <h1 className='center-text page-title-1'>You are successfully checked in! </h1>
+        <h1 className='center-text page-title-1'>You have successfully checked in! </h1>
       </div>
       }
 
