@@ -11,7 +11,7 @@ class Page_Phone extends Component {
     this.state = {
       show: false,
       enter: true,
-      value:null,
+      value: null,
       submitted: false
     }
   }
@@ -24,12 +24,12 @@ class Page_Phone extends Component {
     }
   }
 
-  clickNo() {
+  handleBack() {
     this.setState({
-      enter: false
+      enter: true
     });
     this.props.clickStep({
-      step: 2
+      step: 1
     });
   }
 
@@ -37,6 +37,34 @@ class Page_Phone extends Component {
     this.setState({
       value: e.target.value
     });
+  }
+
+  handleResult(data, error) {
+    if (data.entry.length > 1) {
+      console.log(this);
+      console.log(data.entry[1].resource);
+      var patient = data.entry[1].resource;
+      var newInfo = this.props.oldInfo;
+      newInfo.birth_date = patient.birthDate;
+      newInfo.biological_gender = patient.gender;
+      newInfo.preferred_gender = patient.gender;
+      newInfo.first_name = patient.name[0].given[0];
+      newInfo.last_name = patient.name[0].family[0];
+      newInfo.phone_number = patient.telecom[0].value;
+      newInfo.street_address = patient.address[0].line[0];
+      newInfo.zip_code = patient.address[0].postalCode;
+      newInfo.city = patient.address[0].city;
+      newInfo.state = patient.address[0].state;
+      newInfo.phone_num = $("#icon_telephone")[0].value;
+      this.props.updateInfo(newInfo);
+      this.props.handleVisited();
+      this.props.clickStep({
+        step: 2
+      });
+    }
+    else {
+      console.log(error);
+    }
   }
 
   handleSubmit(e) {
@@ -71,19 +99,14 @@ class Page_Phone extends Component {
                 console.log('Error', res.message);
             }
         });*/
-
+        console.log($('#icon_telephone'));
         var userPass = '608-271-9000';
 
   var baseUrl = "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/";
 
-  var patientSearchString = "/Patient?telecom=" + '6082719000';
+  var patientSearchString = "/Patient?telecom=" + $("#icon_telephone")[0].value;
 
-  $.getJSON(baseUrl + patientSearchString, function(data,error) {
-      console.log(data);
-
-
-  });
-
+  $.getJSON(baseUrl + patientSearchString, this.handleResult.bind(this));
   }
 
 
@@ -99,15 +122,21 @@ class Page_Phone extends Component {
         <div className='row phone-input'>
           <div className="input-field col s12">
             <i className="material-icons prefix scale-transition">phone</i>
-            <input id="icon_telephone" type="tel" className="validate tel" value={this.state.value} onChange={this.handleChange.bind(this)} />
+            <input id="icon_telephone" type="tel" className="validate tel" defaultValue={'6082719000'} onChange={this.handleChange.bind(this)} />
             <label htmlFor="icon_telephone"></label>
           </div>
         </div>
         { !this.state.submitted &&
         <div className='row phone-input center'>
-        <button className="btn-large waves-effect waves-light primary" type="submit" name="action">Submit
-          <i className="material-icons right">send</i>
-        </button>
+          <div className='col s6 '>
+            <button className="btn waves-effect waves-light secondary my-left left" onClick={this.handleBack.bind(this)}>Back
+            </button>
+          </div>
+        <div className='col s6 '>
+          <button className="btn waves-effect waves-light primary my-right right" type="submit" name="action">Submit
+            <i className="material-icons right">send</i>
+          </button>
+        </div>
         </div>
         }
         { this.state.submitted &&

@@ -8,16 +8,20 @@
     "material-ui": "^0.17.3",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-html-attributes": "^1.2.6",
     "react-tap-event-plugin": "^2.0.1",
     "react-transition-group": "^1.1.1"
   },
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "deploy" : "npm run build&&gh-pages -d build"
+  },
+  "homepage": "https://owlkaiwei.github.io/Grady-Checkin-Kiosk"
 }

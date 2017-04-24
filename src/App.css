@@ -146,6 +146,29 @@ nav
   padding-top:20px;
 }
 
+/* Avatar */
+a.borderbutton
+{
+  border: 2px solid #212121;
+  width:150px;
+}
+
+.activePain
+{
+  background-color:#212121!important;
+  color:#ffffff;
+}
+
+.focus
+{
+  background-color:#fff;
+}
+
+#headStuff, #neckStuff, #chestStuff, #legStuff, #upperBackStuff, #absStuff, #groinStuff, #lowerBackStuff, #backHeadStuff, #shoulderStuff
+{
+  display:none;
+}
+
 
 /* Button */
 

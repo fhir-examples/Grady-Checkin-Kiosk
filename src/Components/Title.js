@@ -30,11 +30,25 @@ class Title extends Component {
         <h1 className='center-text page-title-1'>Welcome to Grady Hospital!</h1>
      </div>
       }
-      {(this.state.step>1 && this.state.step!==4 && this.state.step!==7) &&
+      {(this.state.step>4 && this.state.step!==7) &&
       <div key='2'>
         <h1 className='center-text page-title-2'>We just need some information... </h1>
         <ProgressBar step={this.state.step}/>
      </div>
+      }
+      {(this.state.step===2 || this.state.step===3) && !this.props.visited &&
+        <div key='5'>
+          <h1 className='center-text page-title-2'>We just need some information... </h1>
+          <ProgressBar step={this.state.step}/>
+       </div>
+
+      }
+      {(this.state.step===2 || this.state.step===3) && this.props.visited &&
+        <div key='5'>
+          <h1 className='center-text page-title-2'>Make any updates you may have... </h1>
+          <ProgressBar step={this.state.step}/>
+       </div>
+
       }
       {(this.state.step===4) &&
       <div key='3'>
@@ -42,7 +56,7 @@ class Title extends Component {
       </div>
       }
       {(this.state.step===7) &&
-      <div key='3'>
+      <div key='4'>
         <h1 className='center-text page-title-1'>You have successfully checked in! </h1>
       </div>
       }

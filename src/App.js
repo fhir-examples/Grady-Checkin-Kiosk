@@ -7,7 +7,7 @@ import Page_Visited from './Components/1_Page_Visited';
 import Page_Basic_Info from './Components/2_Page_Basic_Info';
 import Page_Contact from './Components/3_Page_Contact';
 import Page_Phone from './Components/4_Page_Phone';
-import Page_Sympton from './Components/5_Page_Sympton';
+import Page_Symptom from './Components/5_Page_Symptom';
 import Page_Misc from './Components/6_Page_Misc';
 import Page_Finish from './Components/7_Page_Finish';
 
@@ -26,7 +26,21 @@ class App extends Component {
     this.state = {
       step: 0,
       contentAnimation: 'content-enter',
+      visited: false,
+      info: {}
     };
+  }
+
+  updateInfo(newInfo) {
+    this.setState({
+      info: newInfo
+    });
+  }
+
+  handleVisited() {
+    this.setState({
+      visited: true
+    });
   }
 
   handleStep(e) {
@@ -46,21 +60,21 @@ class App extends Component {
   }
 
   render() {
-    console.log('parent re-rendering. step should be')
-    console.log(this.state.step > 1);
+    console.log('info is now')
+    console.log(this.state.info);
     return (
       <div>
         <Header/>
         <div className='container'>
-        <Title step={this.state.step}/>
+        <Title step={this.state.step} visited={this.state.visited}/>
         <Page_Welcome animation={this.state.contentAnimation} show={this.state.step===0} clickStep={this.handleStep.bind(this)}/>
         <Page_Visited animation={this.state.contentAnimation} show={this.state.step===1} clickStep={this.handleStep.bind(this)}/>
-        <Page_Basic_Info animation={this.state.contentAnimation} show={this.state.step===2} clickStep={this.handleStep.bind(this)}/>
-        <Page_Contact animation={this.state.contentAnimation} show={this.state.step===3} clickStep={this.handleStep.bind(this)}/>
-        <Page_Sympton animation={this.state.contentAnimation} show={this.state.step===5} clickStep={this.handleStep.bind(this)}/>
+        <Page_Basic_Info animation={this.state.contentAnimation} show={this.state.step===2} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info}/>
+        <Page_Contact animation={this.state.contentAnimation} show={this.state.step===3} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info}/>
+        <Page_Symptom animation={this.state.contentAnimation} show={this.state.step===5} clickStep={this.handleStep.bind(this)}/>
         <Page_Misc animation={this.state.contentAnimation} show={this.state.step===6} clickStep={this.handleStep.bind(this)}/>
         <Page_Finish animation={this.state.contentAnimation} show={this.state.step===7} clickStep={this.handleStep.bind(this)}/>
-        <Page_Phone animation={this.state.contentAnimation} show={this.state.step===4} clickStep={this.handleStep.bind(this)}/>
+        <Page_Phone animation={this.state.contentAnimation} show={this.state.step===4} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info} handleVisited={this.handleVisited.bind(this)}/>
 
         </div>
         </div>

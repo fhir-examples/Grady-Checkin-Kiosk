@@ -32,7 +32,7 @@ class Page_Visited extends Component {
 
   clickYes() {
     this.setState({
-      enter: true
+      enter: false
     });
     this.props.clickStep({
       step: 4

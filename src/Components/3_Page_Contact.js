@@ -54,6 +54,11 @@ class Page_Contact extends Component {
     }
   }
 
+  handleChange(e) {
+    var newInfo = this.props.oldInfo;
+    newInfo[e.target.name] = e.target.value;
+    this.props.updateInfo(newInfo);
+  }
 
   render() {
     return (
@@ -67,34 +72,34 @@ class Page_Contact extends Component {
         <div className='content-basic-info'>
           <div className='row'>
             <div className="input-field col s6 m9">
-              <input id="street_address" type="text" className="validate"/>
-              <label htmlFor="street_address">Street Address</label>
+              <input name="street_address" type="text" className="validate" defaultValue={this.props.oldInfo.street_address?this.props.oldInfo.street_address:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="street_address" className={this.props.oldInfo.street_address?"active":""}>Street Address</label>
             </div>
             <div className="input-field col s6 m3">
-              <input id="apt_num" type="text" className="validate"/>
-              <label htmlFor="apt_num">Apt #</label>
+              <input name="apt_num" type="text" className="validate" defaultValue={this.props.oldInfo.apt_num?this.props.oldInfo.apt_num:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="apt_num" className={this.props.oldInfo.apt_num?"active":""}>Apt #</label>
             </div>
           </div>
 
           <div className='row'>
             <div className="input-field col s4 m3">
-              <input id="zip_code" type="text" className="validate"/>
-              <label htmlFor="zip_code">Zip Code</label>
+              <input name="zip_code" type="text" className="validate" defaultValue={this.props.oldInfo.zip_code?this.props.oldInfo.zip_code:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="zip_code" className={this.props.oldInfo.zip_code?"active":""}>Zip Code</label>
             </div>
             <div className="input-field col s4 m6">
-              <input id="city" type="text" className="validate"/>
-              <label htmlFor="city">City</label>
+              <input name="city" type="text" className="validate" defaultValue={this.props.oldInfo.city?this.props.oldInfo.city:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="city" className={this.props.oldInfo.city?"active":""}>City</label>
             </div>
             <div className="input-field col s4 m3">
-              <input id="state" type="text" className="validate"/>
-              <label htmlFor="state">State</label>
+              <input name="state" type="text" className="validate" defaultValue={this.props.oldInfo.state?this.props.oldInfo.state:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="state" className={this.props.oldInfo.state?"active":""}>State</label>
             </div>
           </div>
 
           <div className='row'>
             <div className="input-field col s6">
-              <input id="phone_num" type="tel" className="validate"/>
-              <label htmlFor="phone_num">Phone Number</label>
+              <input name="phone_num" type="tel" className="validate" defaultValue={this.props.oldInfo.phone_num?this.props.oldInfo.phone_num:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="phone_num" className={this.props.oldInfo.phone_num?"active":""}>Phone Number</label>
             </div>
             <div className='col s6'>
               <a className="waves-effect waves-light btn primary phone-button">Confirm</a>
@@ -103,8 +108,8 @@ class Page_Contact extends Component {
 
           <div className='row'>
             <div className="input-field col s6">
-              <input id="email" type="email" className="validate"/>
-              <label htmlFor="email">Email Address</label>
+              <input name="email" type="email" className="validate" defaultValue={this.props.oldInfo.email?this.props.city.email:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="email" className={this.props.oldInfo.email?"active":""}>Email Address</label>
             </div>
           </div>
 
