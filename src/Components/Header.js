@@ -16,6 +16,10 @@ class Header extends Component {
     })
   }
 
+  handleLanguageChange(e) {
+    this.props.handleLanguageChange(e.target.name);
+  }
+
   render() {
     return (
       // <div className='container'>
@@ -59,11 +63,11 @@ class Header extends Component {
       </div>
 
         <ul id='dropdown1' className='dropdown-content'>
-          <li><a href="#!" className='red-text text-lighten-1'>English</a></li>
+          <li><a href="#!" className='red-text text-lighten-1' name="english" onClick={this.handleLanguageChange.bind(this)}>English</a></li>
           <li className="divider"></li>
-          <li><a href="#!" className='red-text text-lighten-1'>Spanish</a></li>
+          <li><a href="#!" className='red-text text-lighten-1' name="spanish" onClick={this.handleLanguageChange.bind(this)}>Spanish</a></li>
           <li className="divider"></li>
-          <li><a href="#!" className='red-text text-lighten-1'>Arabic</a></li>
+          <li><a href="#!" className='red-text text-lighten-1' >Arabic</a></li>
         </ul>
 
       </nav>

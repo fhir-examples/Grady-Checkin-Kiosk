@@ -3,7 +3,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 
-class Page_Finish extends Component {
+class Page_Direction extends Component {
 
   constructor() {
     super();
@@ -39,7 +39,7 @@ class Page_Finish extends Component {
       {this.state.show && this.props.language==='english' &&
       <div key='1'>
         <div className='content-welcome'>
-          <p className="main center-text"> Done!</p>
+          <p className="main center-text"> Exit out of the Emergency Department. Walk towards the Steiner Building. Once past the Steiner Building, you will see the clinic on the right.</p>
           <div className='center'>
             <a className="waves-effect waves-light btn secondary primary" onClick={this.clickNo.bind(this)}>Done</a>
           </div>
@@ -49,7 +49,8 @@ class Page_Finish extends Component {
       {this.state.show && this.props.language==='spanish' &&
       <div key='1'>
         <div className='content-welcome'>
-          <p className="main center-text"> Hecho!</p>
+          <p className="main center-text">
+Salga del Departamento de Emergencias. Camine hacia el edificio Steiner. Una vez pasado el edificio Steiner, verá la clínica a la derecha.</p>
           <div className='center'>
             <a className="waves-effect waves-light btn secondary primary" onClick={this.clickNo.bind(this)}>Hecho</a>
           </div>
@@ -61,4 +62,4 @@ class Page_Finish extends Component {
   }
 }
 
-export default Page_Finish;
+export default Page_Direction;

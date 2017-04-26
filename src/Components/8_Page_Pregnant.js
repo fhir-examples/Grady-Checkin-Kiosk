@@ -3,7 +3,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 
-class Page_Finish extends Component {
+class Page_Pregnant extends Component {
 
   constructor() {
     super();
@@ -39,7 +39,7 @@ class Page_Finish extends Component {
       {this.state.show && this.props.language==='english' &&
       <div key='1'>
         <div className='content-welcome'>
-          <p className="main center-text"> Done!</p>
+          <p className="main center-text"> Patients who are pregnant should be seen at <b> Obstetrics and Gynecology </b>. Please report to the registration desk to be transferred.</p>
           <div className='center'>
             <a className="waves-effect waves-light btn secondary primary" onClick={this.clickNo.bind(this)}>Done</a>
           </div>
@@ -49,7 +49,7 @@ class Page_Finish extends Component {
       {this.state.show && this.props.language==='spanish' &&
       <div key='1'>
         <div className='content-welcome'>
-          <p className="main center-text"> Hecho!</p>
+          <p className="main center-text"> Los pacientes que están embarazadas deben ser vistos en <p> Obstetrics and Gynecology </p>. Por favor, informe a la mesa de registro para ser transferido.</p>
           <div className='center'>
             <a className="waves-effect waves-light btn secondary primary" onClick={this.clickNo.bind(this)}>Hecho</a>
           </div>
@@ -61,4 +61,4 @@ class Page_Finish extends Component {
   }
 }
 
-export default Page_Finish;
+export default Page_Pregnant;

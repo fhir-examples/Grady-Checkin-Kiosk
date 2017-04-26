@@ -22,6 +22,15 @@ class Page_Welcome extends Component {
     });
   }
 
+  clickYes() {
+    this.setState({
+      enter: true
+    });
+    this.props.clickStep({
+      step: 9
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.show !== this.state.show) {
       this.setState({
@@ -31,14 +40,12 @@ class Page_Welcome extends Component {
   }
 
   render() {
-    console.log("now the state.show is");
-    console.log(this.props.animation);
     return (
       <CSSTransitionGroup
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
-      {this.state.show &&
+      {this.state.show && this.props.language==='english' &&
       <div key='1'>
         <div className='content-welcome'>
           <p className="info center-text"> Our Grady Walk-In Clinic provides care for non-life threatening conditions.</p>
@@ -48,7 +55,23 @@ class Page_Welcome extends Component {
               <a className="waves-effect waves-light btn secondary  my-left left" onClick={this.clickNo.bind(this)}>NO</a>
             </div>
             <div className='col s6'>
-              <a className="waves-effect waves-light btn primary my-right right">YES</a>
+              <a className="waves-effect waves-light btn primary my-right right" onClick={this.clickYes.bind(this)}>YES</a>
+            </div>
+          </div>
+        </div>
+     </div>
+      }
+      {this.state.show &&  this.props.language==='spanish' &&
+      <div key='1'>
+        <div className='content-welcome'>
+          <p className="info center-text"> Nuestra Clínica Grady Walk-In provee cuidado para condiciones que no amenazan la vida.</p>
+          <p className="main center-text"> ¿Te gustaría ser vista en la Clínica Grady Walk-In?</p>
+          <div className='row'>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn secondary  my-left left" onClick={this.clickNo.bind(this)}>NO</a>
+            </div>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn primary my-right right" onClick={this.clickYes.bind(this)}>SÍ</a>
             </div>
           </div>
         </div>

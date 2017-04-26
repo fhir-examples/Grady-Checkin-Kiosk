@@ -10,6 +10,8 @@ import Page_Phone from './Components/4_Page_Phone';
 import Page_Symptom from './Components/5_Page_Symptom';
 import Page_Misc from './Components/6_Page_Misc';
 import Page_Finish from './Components/7_Page_Finish';
+import Page_Pregnant from './Components/8_Page_Pregnant';
+import Page_Direction from './Components/9_Page_Direction';
 
 
 
@@ -27,6 +29,7 @@ class App extends Component {
       step: 0,
       contentAnimation: 'content-enter',
       visited: false,
+      language: 'english',
       info: {}
     };
   }
@@ -47,35 +50,45 @@ class App extends Component {
     this.setState(prevState => ({
       step: e.step,
     }));
-    console.log('in parent, changing step to');
-    console.log(this.state.step);
   }
 
+  handleLanguageChange(l) {
+    this.setState({
+      language: l
+    });
+  }
   handleBack() {
     this.setState(prevState => ({
       step: prevState.step - 1,
     }));
-    console.log('in parent, changing step to');
-    console.log(this.state.step);
   }
 
   render() {
-    console.log('info is now')
-    console.log(this.state.info);
     return (
       <div>
-        <Header/>
+        <Header handleLanguageChange={this.handleLanguageChange.bind(this)}/>
         <div className='container'>
-        <Title step={this.state.step} visited={this.state.visited}/>
-        <Page_Welcome animation={this.state.contentAnimation} show={this.state.step===0} clickStep={this.handleStep.bind(this)}/>
-        <Page_Visited animation={this.state.contentAnimation} show={this.state.step===1} clickStep={this.handleStep.bind(this)}/>
-        <Page_Basic_Info animation={this.state.contentAnimation} show={this.state.step===2} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info}/>
-        <Page_Contact animation={this.state.contentAnimation} show={this.state.step===3} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info}/>
-        <Page_Symptom animation={this.state.contentAnimation} show={this.state.step===5} clickStep={this.handleStep.bind(this)}/>
-        <Page_Misc animation={this.state.contentAnimation} show={this.state.step===6} clickStep={this.handleStep.bind(this)}/>
-        <Page_Finish animation={this.state.contentAnimation} show={this.state.step===7} clickStep={this.handleStep.bind(this)}/>
-        <Page_Phone animation={this.state.contentAnimation} show={this.state.step===4} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info} handleVisited={this.handleVisited.bind(this)}/>
+        <Title step={this.state.step} language={this.state.language} visited={this.state.visited}/>
+        <Page_Welcome language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===0} clickStep={this.handleStep.bind(this)}/>
+        <Page_Visited language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===1} clickStep={this.handleStep.bind(this)}/>
+        <Page_Basic_Info language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===2} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info}/>
+        <Page_Contact language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===3} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info}/>
+        <Page_Symptom language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===5} clickStep={this.handleStep.bind(this)}/>
+        <Page_Misc language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===6} clickStep={this.handleStep.bind(this)}/>
+        <Page_Finish language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===7} clickStep={this.handleStep.bind(this)}/>
+        <Page_Pregnant language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===8} clickStep={this.handleStep.bind(this)}/>
+        <Page_Phone language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===4} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info} handleVisited={this.handleVisited.bind(this)}/>
+        <Page_Direction language={this.state.language} animation={this.state.contentAnimation} show={this.state.step===9} clickStep={this.handleStep.bind(this)} updateInfo={this.updateInfo.bind(this)} oldInfo={this.state.info} handleVisited={this.handleVisited.bind(this)}/>
 
+        </div>
+        <div id="modal1" className="modal">
+          <div className="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+          </div>
+          <div className="modal-footer">
+            <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
         </div>
         </div>
     );

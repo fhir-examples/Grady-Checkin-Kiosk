@@ -41,7 +41,6 @@ class Page_Contact extends Component {
   }
 
   onGenderChange(e) {
-    console.log(e.target.id);
     if (e.target.id === 'female') {
       this.setState(prevState => ({
         pregnant_question: true
@@ -67,7 +66,7 @@ class Page_Contact extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
-      {this.state.show &&
+      {this.state.show && this.props.language==='english' &&
       <form key='1'>
         <div className='content-basic-info'>
           <div className='row'>
@@ -119,6 +118,64 @@ class Page_Contact extends Component {
             </div>
             <div className='col s6'>
               <a className="waves-effect waves-light btn primary right" onClick={this.clickNext.bind(this)}>Next</a>
+            </div>
+          </div>
+        </div>
+     </form>
+      }
+      {this.state.show && this.props.language==='spanish' &&
+      <form key='1'>
+        <div className='content-basic-info'>
+          <div className='row'>
+            <div className="input-field col s6 m9">
+              <input name="street_address" type="text" className="validate" defaultValue={this.props.oldInfo.street_address?this.props.oldInfo.street_address:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="street_address" className={this.props.oldInfo.street_address?"active":""}>Dirección</label>
+            </div>
+            <div className="input-field col s6 m3">
+              <input name="apt_num" type="text" className="validate" defaultValue={this.props.oldInfo.apt_num?this.props.oldInfo.apt_num:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="apt_num" className={this.props.oldInfo.apt_num?"active":""}>Apt #</label>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className="input-field col s4 m3">
+              <input name="zip_code" type="text" className="validate" defaultValue={this.props.oldInfo.zip_code?this.props.oldInfo.zip_code:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="zip_code" className={this.props.oldInfo.zip_code?"active":""}>Código postal</label>
+            </div>
+            <div className="input-field col s4 m6">
+              <input name="city" type="text" className="validate" defaultValue={this.props.oldInfo.city?this.props.oldInfo.city:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="city" className={this.props.oldInfo.city?"active":""}>Ciudad</label>
+            </div>
+            <div className="input-field col s4 m3">
+              <input name="state" type="text" className="validate" defaultValue={this.props.oldInfo.state?this.props.oldInfo.state:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="state" className={this.props.oldInfo.state?"active":""}>Estado</label>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className="input-field col s6">
+              <input name="phone_num" type="tel" className="validate" defaultValue={this.props.oldInfo.phone_num?this.props.oldInfo.phone_num:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="phone_num" className={this.props.oldInfo.phone_num?"active":""}>Número de teléfono
+</label>
+            </div>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn primary phone-button">Confirmar</a>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className="input-field col s6">
+              <input name="email" type="email" className="validate" defaultValue={this.props.oldInfo.email?this.props.city.email:""} onChange={this.handleChange.bind(this)}/>
+              <label htmlFor="email" className={this.props.oldInfo.email?"active":""}>Correo electrónico</label>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn secondary left" onClick={this.clickBack.bind(this)}>Anterior</a>
+            </div>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn primary right" onClick={this.clickNext.bind(this)}>Siguiente</a>
             </div>
           </div>
         </div>

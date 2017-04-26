@@ -41,7 +41,6 @@ class Page_Symptom extends Component {
   }
 
   onGenderChange(e) {
-    console.log(e.target.id);
     if (e.target.id === 'female') {
       this.setState(prevState => ({
         pregnant_question: true
@@ -559,6 +558,325 @@ class Page_Symptom extends Component {
 
         </form>
       }
+      {this.state.show && this.props.language==='spanish' &&
+  <form key='1'>
+
+
+
+  <div className="row">
+
+
+
+  <div className="col s12 m6 center-align">
+  Seleccione las áreas de interés:
+  <br/>
+  <br/>
+
+  <img src={require('../img/malefront.png')} width="100" height="300" useMap="#malefront">
+  </img>&emsp;
+  <img src={require('../img/maleback.png')} width="100" height="300" useMap="#maleback">
+  </img>
+
+  <map name="malefront">
+
+  <area className="head" shape="rect" coords="30,0,70,40" onClick={this.toggleHead.bind(this)}></area>
+  <area className="neck" shape="rect" coords="40, 37, 60, 45" onClick={this.toggleNeck.bind(this)}></area>
+  <area className="chest" shape="rect" coords="22, 45, 77, 95" onClick={this.toggleChest.bind(this)}></area>
+  <area className="abs" shape="rect" coords="22, 95, 77, 140" onClick={this.toggleAbs.bind(this)}></area>
+  <area className="shoulder" shape="rect" coords="22, 90, 77, 140" onClick={this.toggleShoulder.bind(this)}></area>
+  <area className="groin" shape="rect" coords="20, 140, 80, 177" onClick={this.toggleGroin.bind(this)}></area>
+  <area className="leg" shape="rect" coords="20, 177, 80, 350" onClick={this.toggleLeg.bind(this)}></area>
+  <area className="shoulder" shape="rect" coords="5,45,95,75" onClick={this.toggleShoulder.bind(this)}></area>
+  </map>
+
+  <map name="maleback">
+
+  <area className="upperback" shape="rect" coords="22,45,77,110" onClick={this.toggleUpperBack.bind(this)}></area>
+  <area className="lowerback" shape="rect" coords="22,110,80,165" onClick={this.toggleLowerBack.bind(this)}></area>
+  <area className="leg" shape="rect" coords="20, 278, 80, 350" onClick={this.toggleLeg.bind(this)}></area>
+  <area className="backhead" shape="rect" coords="32,0,67,40" onClick={this.toggleBackHead.bind(this)}></area>
+  </map>
+  </div>
+
+
+
+  <div className="col s12 m6 center-align" id="specificPains">
+  <div id="neckStuff">
+ ¿Qué estás experimentando en <b>la zona del cuello</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+
+  </div>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SANGRÍA</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DEBILIDAD</a></div>
+
+  </div>
+
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">TOSER</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SIBILANCIAS</a></div>
+
+  </div>
+  </div>
+
+
+
+  <div id="headStuff">
+
+
+¿Dónde está experimentando su síntoma?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">CABEZA</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">OJOS</a></div>
+
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">NARIZ</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">BOCA</a></div>
+
+  </div>
+
+¿Qué estás experimentando en tu <b>área de la cabeza?</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SANGRÍA</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DEBILIDAD</a></div>
+
+  </div>
+
+  </div>
+
+
+  <div id="chestStuff">
+
+
+  ¿Qué estás experimentando en tu <b>área del pecho</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SIBILIANCIAS</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">TOSER</a></div>
+
+  </div>
+
+  </div>
+
+
+
+
+
+  <div id="shoulderStuff">
+
+
+  Lo que está experimentando en su <b>área de los hombros</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+  <div id="absStuff">
+
+
+  ¿Qué está experimentando en su <b>área abdominal</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INDIGESTIÓN</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">ESTREÑIMIENTO</a></div>
+
+  </div>
+
+  </div>
+
+
+
+
+
+
+  <div id="groinStuff">
+
+
+  ¿Qué estás experimentando en <b>la zona de la ingle</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+
+
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SANGRE EN PIE</a></div>
+
+
+  </div>
+
+  </div>
+
+
+
+
+
+
+  <div id="legStuff">
+
+
+  ¿Dónde está experimentando su síntoma?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">MUSLO</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">RODILLA</a></div>
+
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">PIERNA INFERIOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">PIES</a></div>
+
+  </div>
+
+  ¿Qué estás experimentando en <b>el área de tus piernas?</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SANGRÍA</a></div>
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DEBILIDAD</a></div>
+
+  </div>
+
+  </div>
+
+
+
+
+
+  <div id="upperBackStuff">
+
+  ¿Qué está experimentando en su <b>zona inferior de la espalda</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+  <div id="backHeadStuff">
+
+  Lo que está experimentando en la parte posterior de su <b>área de la cabeza?</b><br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SANGRÍA</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DEBILIDAD</a></div>
+  </div>
+  </div>
+
+
+
+
+  <div id="lowerBackStuff">
+
+
+  ¿Qué está experimentando en su <b>zona inferior de la espalda</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+  <div className='row'>
+    <div className='col s6'>
+      <a className="waves-effect waves-light btn secondary left" onClick={this.clickBack.bind(this)}>Anterior</a>
+    </div>
+    <div className='col s6'>
+      <a className="waves-effect waves-light btn primary right" onClick={this.clickNext.bind(this)}>Siguiente</a>
+    </div>
+  </div>
+
+
+  </form>
+}
       </CSSTransitionGroup>
       <CSSTransitionGroup
       transitionName='button'

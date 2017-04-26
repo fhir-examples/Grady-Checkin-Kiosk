@@ -40,15 +40,13 @@ class Page_Visited extends Component {
   }
 
   render() {
-    console.log("enter is");
-    console.log(this.state.enter);
     return (
       <div>
       <CSSTransitionGroup
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
-      {this.state.show  &&
+      {this.state.show  && this.props.language==='english' &&
         <div key='1' className='content-welcome'>
           <p className="main center-text"> Have you visited us before?</p>
 
@@ -58,6 +56,20 @@ class Page_Visited extends Component {
             </div>
             <div className='col s6'>
               <a className="waves-effect waves-light btn primary my-right right" onClick={this.clickYes.bind(this)}>YES</a>
+            </div>
+          </div>
+        </div>
+      }
+      {this.state.show  && this.props.language==='spanish' &&
+        <div key='1' className='content-welcome'>
+          <p className="main center-text"> ¿Nos has visitado antes?</p>
+
+          <div className='row'>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn secondary my-left left" onClick={this.clickNo.bind(this)}>NO</a>
+            </div>
+            <div className='col s6'>
+              <a className="waves-effect waves-light btn primary my-right right" onClick={this.clickYes.bind(this)}>SÍ</a>
             </div>
           </div>
         </div>

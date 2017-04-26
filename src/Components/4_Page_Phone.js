@@ -99,7 +99,6 @@ class Page_Phone extends Component {
                 console.log('Error', res.message);
             }
         });*/
-        console.log($('#icon_telephone'));
         var userPass = '608-271-9000';
 
   var baseUrl = "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/";
@@ -116,13 +115,13 @@ class Page_Phone extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
-      {this.state.show &&
+      {this.state.show && this.props.language==='english' &&
       <div key='1'>
       <form onSubmit={this.handleSubmit.bind(this)}>
         <div className='row phone-input'>
           <div className="input-field col s12">
             <i className="material-icons prefix scale-transition">phone</i>
-            <input id="icon_telephone" type="tel" className="validate tel" defaultValue={'6082719000'} onChange={this.handleChange.bind(this)} />
+            <input id="icon_telephone" type="tel" className="validate tel"  onChange={this.handleChange.bind(this)} />
             <label htmlFor="icon_telephone"></label>
           </div>
         </div>
@@ -134,6 +133,47 @@ class Page_Phone extends Component {
           </div>
         <div className='col s6 '>
           <button className="btn waves-effect waves-light primary my-right right" type="submit" name="action">Submit
+            <i className="material-icons right">send</i>
+          </button>
+        </div>
+        </div>
+        }
+        { this.state.submitted &&
+          <div className='center'>
+        <div className="preloader-wrapper active phone-input">
+          <div className="spinner-layer spinner-red-only">
+            <div className="circle-clipper left">
+              <div className="circle"></div>
+            </div><div className="gap-patch">
+              <div className="circle"></div>
+            </div><div className="circle-clipper right">
+              <div className="circle"></div>
+            </div>
+          </div>
+        </div>
+        </div>
+        }
+      </form>
+     </div>
+      }
+      {this.state.show && this.props.language==='spanish' &&
+      <div key='1'>
+      <form onSubmit={this.handleSubmit.bind(this)}>
+        <div className='row phone-input'>
+          <div className="input-field col s12">
+            <i className="material-icons prefix scale-transition">phone</i>
+            <input id="icon_telephone" type="tel" className="validate tel" onChange={this.handleChange.bind(this)} />
+            <label htmlFor="icon_telephone"></label>
+          </div>
+        </div>
+        { !this.state.submitted &&
+        <div className='row phone-input center'>
+          <div className='col s6 '>
+            <button className="btn waves-effect waves-light secondary my-left left" onClick={this.handleBack.bind(this)}>Anterior
+            </button>
+          </div>
+        <div className='col s6 '>
+          <button className="btn waves-effect waves-light primary my-right right" type="submit" name="action">Enviar
             <i className="material-icons right">send</i>
           </button>
         </div>
