@@ -1,5 +1,5 @@
 # Grady Checkin-in Kiosk Project
-### Kaiwei Wang & Victoria Chai
+### Kaiwei Wang & Victoria Chai & Qiaochu Mu
 This project is a front-end interface for the check-in kiosk in Grady Hospital.
 ## Download
 1. In the command line, navigate to the directory yout the project to be in
