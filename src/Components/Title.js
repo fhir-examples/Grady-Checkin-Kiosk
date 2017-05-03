@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import ProgressBar from './ProgressBar';
 
-
-
+//This is the text that you see at the top of each page as the patient is going through entering information.
 class Title extends Component {
 
   constructor() {

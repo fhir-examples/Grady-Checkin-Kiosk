@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import $ from 'jquery';
 
+
+//This is the symptom page where the patient will select what area of their body is bothering them
 class Page_Symptom extends Component {
 
   constructor() {
@@ -61,6 +63,7 @@ class Page_Symptom extends Component {
   }
 
   //all the toggle functions for the different body parts
+  //NECK
   toggleNeck(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -73,8 +76,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //HEAD
   toggleHead(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="block";
@@ -87,8 +92,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //CHEST
   toggleChest(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -101,8 +108,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //ABS
   toggleAbs(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -115,8 +124,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //SHOULDER
   toggleShoulder(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -129,8 +140,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //GROIN
   toggleGroin(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -143,8 +156,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //LEG
   toggleLeg(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -157,8 +172,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //UPPER BACK
   toggleUpperBack(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -171,8 +188,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="block";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";    
   }
 
+  //LOWER BACK
   toggleLowerBack(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -185,8 +204,10 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="block";
     document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="none";  
   }
 
+  //BACK OF HEAD
   toggleBackHead(elem){
     elem.preventDefault();
     document.getElementById('headStuff').style.display="none";
@@ -199,38 +220,24 @@ class Page_Symptom extends Component {
     document.getElementById('upperBackStuff').style.display="none";
     document.getElementById('lowerBackStuff').style.display="none";
     document.getElementById('backHeadStuff').style.display="block";
+    document.getElementById('armStuff').style.display="none";  
   }
 
-  /*sendText(elem){
-
-    // Twilio Credentials
-    var accountSid = 'AC783ff70d8da013a44a76f825b68fcbc6';
-    var authToken = 'd52f17594e075ee4383b6fd210324e4f';
-
-    //require the Twilio module and create a REST client
-    var twilio = require('twilio');
-
-    var client = new twilio.RestClient(accountSid, authToken);
-
-    var confirmPhoneString = "Your number is confirmed.";
-    var finishedString = "You have submitted your information. Please proceed to the waiting room."
-    var bodyString = "Test";
-
-    var count = 0;
-
-    client.sms.messages.create({
-        to: "+12402059799",
-        from: "+12407536788",
-        body: bodyString,
-    }, function(err, message) {
-      if(count == 0){
-        bodyString = confirmPhoneString;
-      }else if(count == 1){
-        bodyString = finishedString;
-      }
-      count++;
-    });
-  }*/
+  //ARMS
+  toggleArms(elem){
+    elem.preventDefault();
+    document.getElementById('headStuff').style.display="none";
+    document.getElementById('neckStuff').style.display="none";
+    document.getElementById('chestStuff').style.display="none";
+    document.getElementById('absStuff').style.display="none";
+    document.getElementById('shoulderStuff').style.display="none";
+    document.getElementById('groinStuff').style.display="none";
+    document.getElementById('legStuff').style.display="none";
+    document.getElementById('upperBackStuff').style.display="none";
+    document.getElementById('lowerBackStuff').style.display="none";
+    document.getElementById('backHeadStuff').style.display="none";
+    document.getElementById('armStuff').style.display="block";    
+  }
 
   render() {
     return (
@@ -239,6 +246,8 @@ class Page_Symptom extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+      
+{/*ENGLISH version*/}
       {this.state.show &&
         <form key='1'>
 
@@ -258,6 +267,7 @@ class Page_Symptom extends Component {
         <img src={require('../img/maleback.png')} width="100" height="300" useMap="#maleback">
         </img>
 
+{/*This is the map area for the male front. More points can be added if necessary.*/}
         <map name="malefront">
 
         <area className="head" shape="rect" coords="30,0,70,40" onClick={this.toggleHead.bind(this)}></area>
@@ -268,8 +278,11 @@ class Page_Symptom extends Component {
         <area className="groin" shape="rect" coords="20, 140, 80, 177" onClick={this.toggleGroin.bind(this)}></area>
         <area className="leg" shape="rect" coords="20, 177, 80, 350" onClick={this.toggleLeg.bind(this)}></area>
         <area className="shoulder" shape="rect" coords="5,45,95,75" onClick={this.toggleShoulder.bind(this)}></area>
+        <area className="arms" shape="rect" coords="0, 60, 15, 175" onClick={this.toggleArms.bind(this)}></area>
+        <area className="arms2" shape="rect" coords="75,60,370,230" onClick={this.toggleArms.bind(this)}></area>
         </map>
 
+{/*This is the map area for the male back. More points can be added if necessary.*/}
         <map name="maleback">
 
         <area className="upperback" shape="rect" coords="22,45,77,110" onClick={this.toggleUpperBack.bind(this)}></area>
@@ -280,7 +293,7 @@ class Page_Symptom extends Component {
         </div>
 
 
-
+{/*NECK AREA*/}
         <div className="col s12 m6 center-align" id="specificPains">
         <div id="neckStuff">
         What are you experiencing in your <b>NECK AREA</b>?<br/><br/>
@@ -309,8 +322,7 @@ class Page_Symptom extends Component {
         </div>
         </div>
 
-
-
+{/*HEAD AREA*/}
         <div id="headStuff">
 
 
@@ -344,7 +356,7 @@ class Page_Symptom extends Component {
 
         </div>
 
-
+{/*CHEST AREA*/}
         <div id="chestStuff">
 
 
@@ -367,10 +379,43 @@ class Page_Symptom extends Component {
 
         </div>
 
+{/*ARM AREA*/}
+        <div id="armStuff">
+
+
+      Where are you experiencing your symptom?<br/><br/>
+
+        <div className="row">
+
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">UPPER ARM</a></div>
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">LOWER ARM</a></div>
+
+        </div>
+        <div className="row">
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">WRIST</a></div>
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">HAND</a></div>
+
+        </div>
+
+        What are you experiencing in your <b>ARM AREA</b>?<br/><br/>
+
+        <div className="row">
+
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">PAIN</a></div>
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DISCOMFORT</a></div>
+
+        </div>
+        <div className="row">
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">BLEEDING</a></div>
+        <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">WEAKNESS</a></div>
+
+        </div>
+
+        </div>
 
 
 
-
+{/*SHOUDLER AREA*/}
         <div id="shoulderStuff">
 
 
@@ -391,7 +436,7 @@ class Page_Symptom extends Component {
 
 
 
-
+{/*ABS AREA*/}
         <div id="absStuff">
 
 
@@ -418,7 +463,7 @@ class Page_Symptom extends Component {
 
 
 
-
+{/*GROIN AREA*/}
         <div id="groinStuff">
 
 
@@ -444,7 +489,7 @@ class Page_Symptom extends Component {
 
 
 
-
+{/*LEG AREA*/}
         <div id="legStuff">
 
 
@@ -483,7 +528,7 @@ class Page_Symptom extends Component {
 
 
 
-
+{/*UPPER BACK AREA*/}
         <div id="upperBackStuff">
 
         What are you experiencing in your <b>UPPER BACK AREA</b>?<br/><br/>
@@ -502,7 +547,7 @@ class Page_Symptom extends Component {
 
 
 
-
+{/*BACK HEAD AREA*/}
         <div id="backHeadStuff">
 
         What are you experiencing in your <b>BACK HEAD AREA</b>?<br/><br/>
@@ -521,7 +566,7 @@ class Page_Symptom extends Component {
 
 
 
-
+{/*LOWER BACK AREA*/}
         <div id="lowerBackStuff">
 
 
@@ -558,6 +603,7 @@ class Page_Symptom extends Component {
 
         </form>
       }
+  {/*SPANISH version*/}
       {this.state.show && this.props.language==='spanish' &&
   <form key='1'>
 
@@ -686,7 +732,38 @@ class Page_Symptom extends Component {
 
   </div>
 
+ <div id="armStuff">
 
+
+¿Dónde está experimentando su síntoma?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">PARTE SUPERIOR DEL BRAZO</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">ANTEBRAZO</a></div>
+
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">MUÑECA</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">MANO</a></div>
+
+  </div>
+
+¿Qué estás experimentando en tu <b>área del brazo?</b>?<br/><br/>
+
+  <div className="row">
+
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DOLOR</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">INCOMODIDAD</a></div>
+
+  </div>
+  <div className="row">
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">SANGRÍA</a></div>
+  <div className="col s12 m6 center-align"><a onClick={this.selectedPain.bind(this)} href="#" className="btn-flat borderbutton">DEBILIDAD</a></div>
+
+  </div>
+
+  </div>
 
 
 

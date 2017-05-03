@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-
+//This is the header component that you see on each page.
+//This contains the Grady hospital logo as well as the language change.
 class Header extends Component {
 
   constructor() {
@@ -22,29 +23,7 @@ class Header extends Component {
 
   render() {
     return (
-      // <div className='container'>
-      // <div className='header valign-wrapper'>
 
-
-      // <img className = 'logo' src={require('../img/logo.png')}></img>
-      // <h5>&emsp;Check-In Kiosk</h5>
-
-
-
-      //
-
-
-      // <ul id='dropdown1' className='dropdown-content'>
-      //   <li><a href="#!" className='red-text text-lighten-1'>English</a></li>
-      //   <li className="divider"></li>
-      //   <li><a href="#!" className='red-text text-lighten-1'>Spanish</a></li>
-      //   <li className="divider"></li>
-      //   <li><a href="#!" className='red-text text-lighten-1'>Arabic</a></li>
-      // </ul>
-
-
-      // </div>
-      // </div>
 
 
 

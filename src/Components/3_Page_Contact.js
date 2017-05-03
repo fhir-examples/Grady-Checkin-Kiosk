@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
-
+//This page handles the contact information
+// - Street Address
+// - Apartment Number
+// - City
+// - State
+// - Zip Code
+// - Email
+// - Phone Number
 class Page_Contact extends Component {
 
   constructor() {
@@ -22,6 +29,7 @@ class Page_Contact extends Component {
     }
   }
 
+  //This function will trigger to allow the user to go back to the previous page
   clickBack() {
     this.setState({
       enter: true
@@ -31,6 +39,7 @@ class Page_Contact extends Component {
     });
   }
 
+  //This function will trigger to allow the user to go to the next step 
   clickNext() {
     this.setState({
       enter: false
@@ -53,6 +62,7 @@ class Page_Contact extends Component {
     }
   }
 
+  //This will update any new information that the user has inputted into the fields
   handleChange(e) {
     var newInfo = this.props.oldInfo;
     newInfo[e.target.name] = e.target.value;
@@ -66,6 +76,7 @@ class Page_Contact extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+    {/*English section*/}
       {this.state.show && this.props.language==='english' &&
       <form key='1'>
         <div className='content-basic-info'>
@@ -123,6 +134,7 @@ class Page_Contact extends Component {
         </div>
      </form>
       }
+    {/*Spanish section*/}
       {this.state.show && this.props.language==='spanish' &&
       <form key='1'>
         <div className='content-basic-info'>

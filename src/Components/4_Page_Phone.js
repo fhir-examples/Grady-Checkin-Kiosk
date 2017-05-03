@@ -4,6 +4,9 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import mkFhir from 'fhir.js';
 import $ from 'jquery';
 
+//This page is where the user will enter their phone number and the system will search for their information.
+//For the purposes of our prototype, we used phone number. This is where Grady's EPIC database needs to be
+//linked to this page. Rather than using phone number, SSN will be used to search.
 class Page_Phone extends Component {
 
   constructor() {
@@ -39,6 +42,7 @@ class Page_Phone extends Component {
     });
   }
 
+  //This function uses the returned JSON format to populate the fields of the patient information
   handleResult(data, error) {
     if (data.entry.length > 1) {
       console.log(this);
@@ -99,13 +103,18 @@ class Page_Phone extends Component {
                 console.log('Error', res.message);
             }
         });*/
+
+        //this is our test phone number
         var userPass = '608-271-9000';
 
-  var baseUrl = "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/";
+    //This is our test EPIC URL to search from. This should be changed once EPIC is updated.
+    var baseUrl = "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/";
 
-  var patientSearchString = "/Patient?telecom=" + $("#icon_telephone")[0].value;
+    //Here we are currently searching by telephone number. However, once the EPIC system is connected,
+    //this should be searching by SSN (or whichever variable is desired)
+    var patientSearchString = "/Patient?telecom=" + $("#icon_telephone")[0].value;
 
-  $.getJSON(baseUrl + patientSearchString, this.handleResult.bind(this));
+    $.getJSON(baseUrl + patientSearchString, this.handleResult.bind(this));
   }
 
 
@@ -115,6 +124,7 @@ class Page_Phone extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+    {/*English version*/}
       {this.state.show && this.props.language==='english' &&
       <div key='1'>
       <form onSubmit={this.handleSubmit.bind(this)}>
@@ -156,6 +166,8 @@ class Page_Phone extends Component {
       </form>
      </div>
       }
+
+    {/*Spanish version*/}
       {this.state.show && this.props.language==='spanish' &&
       <div key='1'>
       <form onSubmit={this.handleSubmit.bind(this)}>

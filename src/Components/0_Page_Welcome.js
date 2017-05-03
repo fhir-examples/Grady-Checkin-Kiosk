@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
-
-
+//this is the first page that the user sees when they approach the kiosk.
+//this page will direct them to the Check-In Clinic if needed.
 class Page_Welcome extends Component {
 
+  //'enter' -> if the check-in process has started
+  //'show' -> display the process
   constructor() {
     super();
     this.state = {
@@ -13,6 +15,7 @@ class Page_Welcome extends Component {
     }
   }
 
+  //User DOES NOT want to go to the check-in clinic
   clickNo() {
     this.setState({
       enter: false
@@ -22,6 +25,7 @@ class Page_Welcome extends Component {
     });
   }
 
+  //User wants to go to the check-in clinic -> bring them to last page
   clickYes() {
     this.setState({
       enter: true
@@ -45,6 +49,8 @@ class Page_Welcome extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+
+      {/*English section*/}
       {this.state.show && this.props.language==='english' &&
       <div key='1'>
         <div className='content-welcome'>
@@ -61,6 +67,8 @@ class Page_Welcome extends Component {
         </div>
      </div>
       }
+
+      {/*Spanish version*/}
       {this.state.show &&  this.props.language==='spanish' &&
       <div key='1'>
         <div className='content-welcome'>

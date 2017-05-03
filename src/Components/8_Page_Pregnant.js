@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
-
+//This page will only appear if the patient selected they are pregnant.
+//Per the workflow, the user will be directed to the OBGYN
 class Page_Pregnant extends Component {
 
   constructor() {
@@ -36,6 +37,7 @@ class Page_Pregnant extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+    {/*ENGLISH version*/}
       {this.state.show && this.props.language==='english' &&
       <div key='1'>
         <div className='content-welcome'>
@@ -46,6 +48,7 @@ class Page_Pregnant extends Component {
         </div>
      </div>
       }
+    {/*SPANISH version*/}
       {this.state.show && this.props.language==='spanish' &&
       <div key='1'>
         <div className='content-welcome'>

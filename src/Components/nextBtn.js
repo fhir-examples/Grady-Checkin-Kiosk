@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+//This is the next bar component.
 class ProgressBar extends Component {
   constructor() {
     super();

@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import $ from 'jquery';
 
-
+//Basic information page - contains:
+// - First Name
+// - Last Name
+// - Birth date
+// - Biological Gender
+// - Preferred Gender
 class Page_Basic_Info extends Component {
 
+  // 'pregnant_question' - will only be asked if preferred gender = female
+  // 'pregnant' - will only be prompted if user selects pregnant
   constructor() {
     super();
     this.state = {
@@ -23,7 +30,7 @@ class Page_Basic_Info extends Component {
     }
   }
 
-
+  //This action will bring the user back to the start page
   clickBack() {
     this.setState({
       enter: true
@@ -33,6 +40,8 @@ class Page_Basic_Info extends Component {
     });
   }
 
+  //This action will bring the user to the next page
+  //If the user is pregnant and her preferred gender is female -> the screen will tell her to go to the OBGYN
   clickNext() {
     this.setState({
       enter: false
@@ -42,6 +51,7 @@ class Page_Basic_Info extends Component {
     });
   }
 
+  //this function will trigger when the user changes their preferred gender
   handleChange(e) {
     var newInfo = this.props.oldInfo;
     newInfo[e.target.name] = e.target.value;
@@ -60,6 +70,7 @@ class Page_Basic_Info extends Component {
     }
   }
 
+  //this function will trigger when the user changes their preferred gender
   onGenderChange(e) {
     if (e.target.id === 'female') {
       this.setState(prevState => ({
@@ -81,6 +92,7 @@ class Page_Basic_Info extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+    {/*English version*/}
       {this.state.show && this.props.language==='english' &&
       <form key='1'>
         <div className='content-basic-info'>
@@ -179,6 +191,8 @@ class Page_Basic_Info extends Component {
         </div>
      </form>
       }
+
+    {/*Spanish version*/}
       {this.state.show && this.props.language==='spanish' &&
       <form key='1'>
         <div className='content-basic-info'>

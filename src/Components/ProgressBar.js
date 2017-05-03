@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-
+//This is the progress bar component that you see at the top of each page.
+//As the user is filling in more information, the progress bar will continue to fill up.
 class ProgressBar extends Component {
   constructor() {
     super();

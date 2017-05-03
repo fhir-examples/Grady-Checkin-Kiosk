@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
-
+//This page will give the user directions to the Walk-In Clinic.
+//From the welcome page, if the user selects 'YES', they will be directed to this page.
 class Page_Direction extends Component {
 
   constructor() {
@@ -36,6 +37,7 @@ class Page_Direction extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+    {/*ENGLISH version*/}
       {this.state.show && this.props.language==='english' &&
       <div key='1'>
         <div className='content-welcome'>
@@ -46,6 +48,8 @@ class Page_Direction extends Component {
         </div>
      </div>
       }
+
+    {/*SPANISH version*/}
       {this.state.show && this.props.language==='spanish' &&
       <div key='1'>
         <div className='content-welcome'>

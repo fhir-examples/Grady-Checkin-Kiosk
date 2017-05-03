@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
-
+//This page contains the last few questions that the nurses want to ask the patient.
+//Contains a total of 5 questions.
 class Page_Misc extends Component {
 
   constructor() {
@@ -62,13 +63,18 @@ class Page_Misc extends Component {
       transitionName={this.props.animation + '-' + this.state.enter}
       transitionEnterTimeout={500}
       transitionLeave={false}>
+      
+      {/*ENGLISH version*/}
       {this.state.show && this.props.language==='english' &&
       <form key='1'>
+
+
+    {/*Have you traveled outside of the country in the last 30 days?*/}
         <div className='row'>
           <div className='col s12'>
             <div className='row'>
               <div className='col s12'>
-                Have yout traveled outside of the country in the last 30 days?
+                Have you traveled outside of the country in the last 30 days?
               </div>
             </div>
             <div className='row'>
@@ -85,6 +91,8 @@ class Page_Misc extends Component {
             </div>
           </div>
         </div>
+
+        {/*Would you like a HIV test today?*/}
         <div className='row'>
           <div className='col s12 m5'>
             <div className='row'>
@@ -105,6 +113,8 @@ class Page_Misc extends Component {
               </div>
             </div>
           </div>
+
+          {/*Are you up to date on your vaccinations?*/}
           <div className='col s2'> </div>
           <div className='col s12 m5'>
             <div className='row'>
@@ -126,6 +136,9 @@ class Page_Misc extends Component {
             </div>
           </div>
         </div>
+
+
+        {/*Have you been abused?*/}
         <div className='row'>
           <div className='col s12 m5'>
             <div className='row'>
@@ -146,6 +159,9 @@ class Page_Misc extends Component {
               </div>
             </div>
           </div>
+
+
+        {/*Do you have a primary care doctor?*/}          
           <div className='col s2'> </div>
           <div className='col s12 m5'>
             <div className='row'>
